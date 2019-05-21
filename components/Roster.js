@@ -1,7 +1,8 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native-web'
+import { StyleSheet, ScrollView, View, Text } from 'react-native-web'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
+import Theme from "./Theme"
 
 const ROSTER_QUERY = gql`
   query Roster {
@@ -21,11 +22,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexGrow: 1,
     justifyContent: 'center'
-  },
-  h1: {
-    alignItems: 'center',
-    fontSize: 24
-  }
+  }  
 })
 
 const Roster = ({ team }) => {
@@ -39,11 +36,13 @@ const Roster = ({ team }) => {
   if (error) return <Text>{`Error: ${error}`}</Text>
 
   return (
-    <View>
-      <Text style={styles.h1}>{team}</Text>
+    <View style={Theme.canvas}>
+      <Text style={Theme.h2}>{team}</Text>
+    <ScrollView>
       {data.roster.teamPlayers.map(x => (
-        <Text key={x.nflId}>{x.displayName}</Text>
+        <Text style={Theme.text} key={x.nflId}>{x.displayName}</Text>
       ))}
+    </ScrollView>
     </View>
   )
 }

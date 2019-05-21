@@ -15,8 +15,7 @@ const styles = StyleSheet.create({
 })
 
 export default props => (
-  <View style={styles.container}>
-    <Text style={styles.text}>NFL RNW</Text>
+  <View style={styles.container}>    
     <Roster team="DAL" />
   </View>
 )
