@@ -1,38 +1,10 @@
-import { useQuery } from '@apollo/react-hooks'
-import { gql } from 'apollo-boost'
+import React, { useState } from 'react'
 import { View, Text } from 'react-native-web'
 
-const QUERY = gql`
-  {
-    roster(year: 2019, teamAbbr: DAL) {
-      teamPlayers {
-        displayName
-        position
-        yearsOfExperience
-      }
-    }
-  }
-`
-const Roster = () => {
-  const { data, loading, error, networkStatus } = useQuery(QUERY, {
-    notifyOnNetworkStatusChange: true
-  })
-  if (error)
-    return (
-      <View>
-        <Text>{error.message}</Text>
-        <Text>{error.statusCode}</Text>
-        <Text>{networkStatus}</Text>
-      </View>
-    )
-  if (loading)
-    return (
-      <View>
-        <Text>Loading</Text>
-      </View>
-    )
+const Roster = ({ team }) => {
+  const [players, setPlayers] = useState(['bob'])
 
-  return <div>{data}</div>
+  return <View>{<Text>{team}</Text>}</View>
 }
 
 export default Roster

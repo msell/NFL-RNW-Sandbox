@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import PlayerCard from '../components/PlayerCard'
+import Roster from '../components/Roster'
 
 const styles = StyleSheet.create({
   container: {
@@ -17,6 +17,6 @@ const styles = StyleSheet.create({
 export default props => (
   <View style={styles.container}>
     <Text style={styles.text}>Welcome to Next.js!</Text>
-    <PlayerCard />
+    <Roster team="DAL" />
   </View>
 )
