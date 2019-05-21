@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
-import { View, Text } from 'react-native-web'
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native-web'
+import {theme, palette} from './Theme'
 
-const PlayerCard = () => {
-  const [players, setPlayers] = useState(['bob'])
-
+const styles = StyleSheet.create({
+  card: {
+    borderWidth: "2px",
+    borderStyle: "solid",
+    borderColor: palette.primaryText,
+    borderRadius: "2px",
+    padding: "4px",    
+    margin: "2px",
+    width: "250px",
+    height: "100px"
+  }
+})
+const PlayerCard = ({displayName}) => {  
   return (
-    <View>
-      {players.map(p => (
-        <Text>{p}</Text>
-      ))}
+    <View style={styles.card}>      
+        <Text style={theme.text}>{displayName}</Text>        
     </View>
   )
 }

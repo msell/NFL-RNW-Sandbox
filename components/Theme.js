@@ -5,7 +5,7 @@ export const palette = {
   primaryText: "#fff"
 };
 
-const theme = StyleSheet.create({
+export const theme = StyleSheet.create({
   container: {
     alignItems: 'center',
     flexGrow: 1,
