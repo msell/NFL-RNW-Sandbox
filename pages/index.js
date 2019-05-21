@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 
 export default props => (
   <View style={styles.container}>
-    <Text style={styles.text}>Welcome to Next.js!</Text>
+    <Text style={styles.text}>NFL RNW</Text>
     <Roster team="DAL" />
   </View>
 )
